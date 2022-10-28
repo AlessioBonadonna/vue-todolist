@@ -24,15 +24,15 @@ const app = createApp({
             newToDo: '',
             todo: [
                 {
-                    testo:'fare i compiti',
+                    testo:'Pomodoro',
                     done: true
                 },
                 {
-                    testo:'fare la spesa ',
+                    testo:'Basilico ',
                     done: false 
                 },
                 {
-                    testo: 'preparare la cena ',
+                    testo: 'Zucchine  ',
                     done: false 
                 },
                  ],
@@ -46,6 +46,10 @@ const app = createApp({
         levaLinea(i) {
             this.todo[i].done=!this.todo[i].done;
             
+    },
+    deletet(i){
+        this.todo.splice(i,1);
     }
+
 }}).mount('#app')
 

@@ -13,10 +13,11 @@
     <body>
         
        <div id="app">
+        <h1>Lista della spesa </h1>
 <ul>
     <li v-for="(tod,i) in todo" :class="tod.done === true ? 'underline' : ''" @click="levaLinea(i)" >
         {{ tod.testo }}
-        <i class="fa-solid fa-solid fa-circle-xmark" @click="delete(i)"></i>
+       <button @click="deletet(i)">X</button>
     </li>
 </ul>
        </div>
