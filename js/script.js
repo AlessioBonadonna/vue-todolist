@@ -21,35 +21,51 @@ const { createApp } = Vue;
 const app = createApp({
     data() {
         return {
+            error:false,
             newToDo: '',
             todo: [
                 {
-                    testo:'Pomodoro',
+                    testo: 'Pomodoro',
                     done: true
                 },
                 {
-                    testo:'Basilico ',
-                    done: false 
+                    testo: 'Basilico ',
+                    done: false
                 },
                 {
                     testo: 'Zucchine  ',
-                    done: false 
+                    done: false
                 },
-                 ],
+            ],
         }
 
 
 
 
     },
-    methods:{
+    methods: {
         levaLinea(i) {
-            this.todo[i].done=!this.todo[i].done;
-            
-    },
-    deletet(i){
-        this.todo.splice(i,1);
-    }
+            this.todo[i].done = !this.todo[i].done;
 
-}}).mount('#app')
+        },
+        deletet(i) {
+            this.todo.splice(i, 1);
+        },
+        aggiungi() {
+
+            if (this.newToDo.length <= 0) {
+                this.error = true;
+                
+
+            }
+            else {
+
+                this.todo.unshift({ testo: this.newToDo, done: false });
+                this.newToDo = '';
+                this.error=false;
+            }
+        }
+
+    }
+}).mount('#app')
 
