@@ -17,14 +17,17 @@
        <div id="app" class="text-center  mt-5">
         <h1>Lista della spesa </h1>
         <div>
-            <input type="text" v-model="newToDo" @keyup.enter="newToDo">
+            <input type="text" v-model="newToDo" @keyup.enter="aggiungi()">
             <button class="btn btn-primary" @click="aggiungi()">Aggiungi alla lista </button>
             <p v-show="error" class="red my-5" >Inserisci oggetto</p>
         </div>
 <ul class="list-group mt-5 d-flex">
     <li class="list-item my-2 me-2" v-for="(tod,i) in todo" :class="tod.done === true ? 'underline' : ''" @click="levaLinea(i)" >
         {{ tod.testo }}
-        <a href="#nogo"><button class="btn-primary btn ms-5 " @click="deletet(i)">X</button></a> 
+  
+
+            <a href="#nogo"><button class="btn-primary btn ms-5 " @click="deletet(i,todo)">X</button></a> 
+        
     </li>
 </ul>
        </div>

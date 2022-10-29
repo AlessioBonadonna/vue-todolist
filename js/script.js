@@ -48,8 +48,10 @@ const app = createApp({
             this.todo[i].done = !this.todo[i].done;
 
         },
-        deletet(i) {
+        deletet(i,todo) {
             this.todo.splice(i, 1);
+            console.log(todo)
+            this.todo[i].done = !this.todo[i].done;
         },
         aggiungi() {
 
